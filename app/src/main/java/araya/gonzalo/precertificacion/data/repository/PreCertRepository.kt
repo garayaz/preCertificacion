@@ -8,4 +8,12 @@ interface PreCertRepository {
     // Trabajar con API
     suspend fun fetchPreCert(): MutableList<PreCertResponse>
     suspend fun fetchPreCertById(idPreCertService: Long): PreCertDetailsResponse
+
+    // Trabajar con la base de datos
+
+    suspend fun saveAllPreCertOnDB(preCert: MutableList<PreCertResponse>)
+    suspend fun getAllPreCertFromDB(): MutableList<PreCertResponse>
+    suspend fun saveDetailPreCertOnDB(detailPreCertResponse: PreCertDetailsResponse)
+    suspend fun getDetailPreCertFromDB(idPreCert: Long): PreCertDetailsResponse
+
 }
